@@ -19,11 +19,11 @@ Ce projet consiste à concevoir une infrastructure Data moderne en combinant :
 ## 🗂️ Arborescence du projet
 
 ```
-├── data/               # Données locales (brutes et transformées)
-├── etl/                # Scripts de scraping, API, traitement, upload vers AWS
-├── dashboard/          # Visualisations et dashboards interactifs
+├── etl/                # DonScripts de scraping, API, traitement, upload vers AWS
+├── infrastructure/     # Requêtage et envoi de données sur Data Lake et Data warehouse(AWS)
+├── Livrable/           # Ensemble du travail effectué
 ├── notebooks/          # Analyses exploratoires (Jupyter)
-├── infrastructure/     # Configs AWS, scripts CLI, diagrammes, IAM
+├── venv/               # Environnement virtuel
 ├── README.md           # Ce fichier
 ├── requirements.txt    # Dépendances Python
 ```
@@ -33,8 +33,8 @@ Ce projet consiste à concevoir une infrastructure Data moderne en combinant :
 ## 🔧 Pipeline ETL (local)
 
 ### Étapes :
-1. **Scraping** d'offres d'emploi via `etl/scraper_wttj.py`
-2. **Requête API** (Adzuna ou Pôle Emploi) via `etl/api_adzuna.py`
+1. **Scraping** d'offres d'emploi via `etl/extractsraping.py`
+2. **Requête API** (Remotive) via `etl/extractapi.py`
 3. **Nettoyage et transformation** des données (Pandas)
 4. **Enregistrement** :
    - Données brutes ➜ `S3`
@@ -53,33 +53,30 @@ python etl/main_etl.py
 - **S3** : stockage brut (Data Lake)
 - **RDS PostgreSQL** : stockage structuré (Data Warehouse)
 - **IAM** : sécurité des accès (via rôles et policies)
-- **CloudTrail** : journalisation des accès
 - **(Sans Glue ni Lambda)** – Pipeline entièrement local
 
 👉 Voir le dossier [`infrastructure/`](infrastructure/) pour :
-- diagramme d’architecture (`diagramme_infra.png`)
-- scripts CLI de création S3 et RDS
-- configurations IAM JSON
-- captures écran (CloudTrail)
+- Architecture Data Clouud(AWS) (`diagramme_infra.pdf`)
+- scripts d'envoie de données sur S3 et RDS
 
 ---
 
-## 📊 Visualisation & Analyse
+## 📊 Analyse
 
-- Dashboard interactif : `dashboard/jobs_dashboard.py`
-- Librairies utilisées : `Plotly`, `Bokeh`, `Seaborn`, `Pandas`
+- Librairies utilisées : `Plotly`, `Pandas`
 - Analyses réalisées :
-  - Répartition géographique des offres
-  - Technologies les plus demandées
-  - Évolution temporelle des publications
+  - Top 10 des jobs les plus demandés
+  - Top 10 des jobs moyennement demandés
+  - Top 10 des jobs les moins demandés
+  - Top 5 des pays avec le plus d'offres
 
 ---
 
 ## 💾 Accès aux données
 
-- Données brutes accessibles dans S3 (`data-lake-emploi`)
-- Données nettoyées dans la base PostgreSQL (`jobs_analytics_db`)
-- Notebooks disponibles dans [`notebooks/`](notebooks/)
+- Données brutes accessibles dans S3 (`my-datalakeeli`)
+- Données nettoyées dans la base PostgreSQL (`data_cleaned_20250627.csv`)
+- Notebooks disponibles dans [`notebook/`](notebook/)
 
 ---
 
@@ -112,7 +109,7 @@ python-dotenv
 
 Le projet est livré sous forme d’une archive :
 ```
-prenom_nom_projet2_AIA01.zip
+ESSONO-NZOGHE Eli-joël-emile_projet2_AIA01.zip
 ```
 Incluant :
 - tous les scripts, notebooks, dashboards
