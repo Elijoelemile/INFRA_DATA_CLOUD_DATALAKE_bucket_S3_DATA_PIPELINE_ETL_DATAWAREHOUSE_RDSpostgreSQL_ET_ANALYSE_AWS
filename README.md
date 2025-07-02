@@ -68,7 +68,7 @@ python etl/main_etl.py
   - Top 10 des jobs les plus demandés
   - Top 10 des jobs moyennement demandés
   - Top 10 des jobs les moins demandés
-  - Top 5 des pays avec le plus d'offres
+  - Top 5 des localisations avec le plus d'offres
 
 ---
 
