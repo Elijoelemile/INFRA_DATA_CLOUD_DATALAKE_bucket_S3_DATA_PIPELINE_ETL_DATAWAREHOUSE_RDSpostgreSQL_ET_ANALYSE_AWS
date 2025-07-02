@@ -1,7 +1,7 @@
 # 📊 Projet #2 – Mise en Place et Optimisation d'une Infrastructure Data sur le Cloud
 
 ## 👤 Auteur
-**Nom Prénom** – Promo AIA01  
+**ESSONO-NZOGHE Eli-joël-emile** – Mastère 1 Architecte en Intelligence Artificielle **Promo AIA01**  
 **Année 1 - L'École Multimédia**
 
 ---
@@ -22,8 +22,11 @@ Ce projet consiste à concevoir une infrastructure Data moderne en combinant :
 ├── etl/                # DonScripts de scraping, API, traitement, upload vers AWS
 ├── infrastructure/     # Requêtage et envoi de données sur Data Lake et Data warehouse(AWS)
 ├── Livrable/           # Ensemble du travail effectué
-├── notebooks/          # Analyses exploratoires (Jupyter)
+├── notebook/           # Analyses exploratoires (Jupyter)
 ├── venv/               # Environnement virtuel
+├── .env/               # Variables d'environnement
+├── .gitignore/         # Ignorance de certains fichiers pour le Github
+├── main.py             # Orchestration de toute l'application(Pas encore achevé)
 ├── README.md           # Ce fichier
 ├── requirements.txt    # Dépendances Python
 ```
@@ -102,20 +105,6 @@ plotly
 bokeh
 python-dotenv
 ```
-
----
-
-## 📁 Livraison
-
-Le projet est livré sous forme d’une archive :
-```
-ESSONO-NZOGHE Eli-joël-emile_projet2_AIA01.zip
-```
-Incluant :
-- tous les scripts, notebooks, dashboards
-- le dépôt complet GitHub
-- une documentation complète (`infrastructure/`)
-- une présentation PowerPoint du projet
 
 ---
 
