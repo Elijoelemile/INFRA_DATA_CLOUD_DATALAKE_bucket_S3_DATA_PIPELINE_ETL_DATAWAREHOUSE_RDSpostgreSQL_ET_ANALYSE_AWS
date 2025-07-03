@@ -19,7 +19,7 @@ Ce projet consiste à concevoir une infrastructure Data moderne en combinant :
 ## 🗂️ Arborescence du projet
 
 ```
-├── etl/                # DonScripts de scraping, API, traitement, upload vers AWS
+├── etl/                # Scripts de scraping, API, traitement, upload vers AWS
 ├── infrastructure/     # Requêtage et envoi de données sur Data Lake et Data warehouse(AWS)
 ├── Livrable/           # Ensemble du travail effectué
 ├── notebook/           # Analyses exploratoires (Jupyter)
@@ -36,7 +36,7 @@ Ce projet consiste à concevoir une infrastructure Data moderne en combinant :
 ## 🔧 Pipeline ETL (local)
 
 ### Étapes :
-1. **Scraping** d'offres d'emploi via `etl/extractsraping.py`
+1. **Scraping** d'offres d'emploi (welcome to the jungle) via `etl/extractsraping.py`
 2. **Requête API** (Remotive) via `etl/extractapi.py`
 3. **Nettoyage et transformation** des données (Pandas)
 4. **Enregistrement** :
@@ -45,7 +45,7 @@ Ce projet consiste à concevoir une infrastructure Data moderne en combinant :
 
 ### Exécution :
 ```bash
-python etl/main_etl.py
+python main.py
 ```
 
 ---
@@ -59,7 +59,7 @@ python etl/main_etl.py
 - **(Sans Glue ni Lambda)** – Pipeline entièrement local
 
 👉 Voir le dossier [`infrastructure/`](infrastructure/) pour :
-- Architecture Data Clouud(AWS) (`diagramme_infra.pdf`)
+- Architecture Data Cloud(AWS) (`diagramme_infra.pdf`)
 - scripts d'envoie de données sur S3 et RDS
 
 ---
@@ -88,7 +88,6 @@ python etl/main_etl.py
 - S3 avec **chiffrement activé**
 - RDS accessible uniquement depuis une IP spécifique
 - IAM configuré pour limiter les droits
-- CloudTrail activé pour audit
 - GitHub utilisé pour le versionnage (commits fréquents)
 
 ---
@@ -110,6 +109,6 @@ python-dotenv
 
 ## 📌 Auteur & contact
 
-**Nom Prénom**  
+**ESSONO-NZOGHE Eli-joël-emile**  
 Promo AIA01  
 Email : nzoghessono@gmail.com  
